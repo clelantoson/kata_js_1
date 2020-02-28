@@ -47,9 +47,24 @@ console.log(name_lastn);
 console.log("Quel age aurait chaque personne aujourd'hui:")
 
 
-let yeartoday = 2020
+const yeartoday = 2020
 entrepreneurs.forEach(hashPerson => {
   console.log(hashPerson);
-  let age = yeartoday - hashPerson.year;
+  const age = yeartoday - hashPerson.year;
   console.log(age);
 });
+
+
+console.log("Trie les entrepreneurs par ordre alphabétique du nom de famille.")
+
+const compare = ( a, b ) => {
+  if ( a.first < b.last ){
+    return -1;
+  }
+  if ( a.first> b.last ){
+    return 1;
+  }
+  return 0;
+}
+
+console.log(entrepreneurs.sort( compare ));
